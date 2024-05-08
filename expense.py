@@ -1,5 +1,4 @@
-from data_objects import Group,UserExpense,Expense,User,AmountType
-from Optimal_account_balancing import balance_account
+from helpers.data_objects import Group,UserExpense,Expense,User
 
 
 class GroupHandler:
@@ -10,8 +9,8 @@ class GroupHandler:
     def add_group(self, name):
         self.groups[name] = Group(name=name, users=set())
 
-    def add_memeber(self, gn, un):
-        self.groups[gn].users.append(un)
+    def add_memeber(self, gn: str, un: str):
+        self.groups[gn].users.add(un)
 
     def show_groups(self):
         return set(self.groups.keys())
@@ -32,23 +31,34 @@ class UserHandler:
 class ExpenseHandler:
 
     def __init__(self):
-        self.expenses = []
+        self.expenses = {}
 
-    def add_expense(self, total_amt, user_amt_map, grp_name, amnt_type:AmountType, name):
+    def add_expense(self, total_amt, user_amt_map, grp_name:Group,  name):
         u_map = []
         for um in user_amt_map:
             if um[1] == 0:
                 continue
-            if amnt_type == AmountType.percent:
-                t = UserExpense(user=um[0], percent=um[1], amount=um[1] * total_amt /100 )
-            else:
-                t = UserExpense(user=um[0], percent=um[1] *100/ total_amt, amount=um[1] )
+            t = UserExpense(user=um[0], amount=um[1] )
             u_map.append(t)
 
-        self.expenses.append(Expense(name=name, grp=grp_name, user_expense=u_map, total=total_amt))
+        if grp_name.name in self.expenses:
+
+            self.expenses[grp_name.name].append(Expense(name=name, grp=grp_name, user_expense=u_map, total=total_amt))
+
+        else:
+            self.expenses[grp_name.name] = [(Expense(name=name, grp=grp_name, user_expense=u_map, total=total_amt))]
 
 
     def settle_grp_expense(self, grp_name):
-        pass
+        # first aggregate all users balance
+        balance = {}
+        for e in self.expenses[grp_name]:
+            for u in e.user_expense:
+                if u.user in balance:
+                    balance[u.user] += u.amount
+                else:
+                    balance[u.user] = u.amount
+
+
 
 

@@ -3,9 +3,6 @@ from enum import Enum
 from typing import Set, List
 
 
-class AmountType(Enum):
-    percent = 'Percent'
-    number = 'Number'
 
 @dataclass
 class User:
@@ -20,7 +17,6 @@ class Group:
 class UserExpense:
     user: User
     amount: float
-    percent: float
 
 @dataclass
 class Expense:

@@ -8,14 +8,14 @@
 
 # Its basically DFS traversal with Backtracking and DP.
 # this code is also similar to permutations code.
-def balance_account(data):
-    p_list = []
-    n_list = []
-    for x in data:
-        if x<0:
-            n_list.append(x)
-        elif x>0:
-            p_list.append(x)
+def balance_account(data:dict):
+    p_list = {}
+    n_list = {}
+    for k,v in data.items():
+        if v<0:
+            n_list[k] = v
+        elif v>0:
+            p_list[k] = v
     dp = {}
 
     def rec(p):
