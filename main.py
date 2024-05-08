@@ -35,8 +35,7 @@ if __name__ == '__main__':
                 u_map.append((u,float(a)*-1))
                 t_amount+= float(a)
 
-            if abs(t_amount-float(amt))>1:
-                # taking 1 margin for float errors
+            if abs(t_amount-float(amt))>0:
                 print('total amount and divide amount does not match, try again... ')
                 input()
                 os.system('cls')
@@ -50,8 +49,7 @@ if __name__ == '__main__':
                 t_amount += float(a)
             os.system('cls')
 
-            if abs(t_amount-float(amt))>1:
-                # taking 1 margin for float errors
+            if abs(t_amount-float(amt))>0:
                 print('total amount and paid amount does not match, try again... ')
                 input()
                 os.system('cls')
