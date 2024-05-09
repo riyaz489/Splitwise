@@ -6,15 +6,20 @@ This is a terminal-based application for managing expenses using the Splitwise m
 
 # Features
 
-Add User: (Placeholder) Add new users to the application.
+Add User: Add new users to the application.
+![Add Users ](https://github.com/riyaz489/Splitwise/assets/27089449/7f95ff81-ac88-4588-a853-26d62437636a)
 
-Add Group: (Placeholder) Create a new group and add members to it.
+Add Group: Create a new group and add members to it.
+![Add group](https://github.com/riyaz489/Splitwise/assets/27089449/61a24260-92fa-4f6e-9358-8b2a36731e3e)
 
-Add Group Member: (Placeholder) Add a member to an existing group.
+Add Group Member: Add a member to an existing group.
+![add grp memebers](https://github.com/riyaz489/Splitwise/assets/27089449/5421d6d4-8aae-4d64-80a1-1e8ec874be75)
 
-Add Expense: (Placeholder) Record expenses within a group.
+Add Expense: Record expenses within a group.
+![add expense ](https://github.com/riyaz489/Splitwise/assets/27089449/79657222-9ffe-4080-854e-0d1a10971106)
 
-Simplify Expense: (Placeholder) Simplify group expenses and calculate who owes what to whom.
+Simplify Expense: Simplify group expenses and calculate who owes what to whom.
+![settle expense ](https://github.com/riyaz489/Splitwise/assets/27089449/4aecd2d6-35a4-4072-8ecf-8c774418b6b3)
 
 # Installation
 
