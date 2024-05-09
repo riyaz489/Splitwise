@@ -11,7 +11,7 @@
 
 # Its basically DFS traversal with Backtracking and DP.
 # this code is also similar to permutations code.
-def balance_account(data:dict):
+def balance_account(data: dict):
     p_list = []
     p_user = []
     n_list = []

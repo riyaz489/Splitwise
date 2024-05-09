@@ -1,3 +1,4 @@
+from helpers.Optimal_account_balancing import balance_account
 from helpers.data_objects import Group,UserExpense,Expense,User
 
 
@@ -58,7 +59,7 @@ class ExpenseHandler:
                     balance[u.user] += u.amount
                 else:
                     balance[u.user] = u.amount
-
-
+        # then call the algo to settle balances
+        return balance_account(balance)
 
 
